@@ -149,6 +149,7 @@ class SpotifyAnalyzer:
             'name': 'song',
             'artist_name': 'artist',
             'artists': 'artist',
+            'track_artist': 'artist',
             'artist.name': 'artist',
             'track_genre': 'genre',
             'playlist_genre': 'genre',
@@ -278,7 +279,7 @@ class SpotifyVisualizer:
         # Sæt Spotify-inspireret stil
         plt.style.use('dark_background')
         self.spotify_green = '#1DB954'
-        self.spotify_black = '#191414'
+        self.spotify_black = "#130F0F"
     
     def plot_top_artists(self, n=10):
         """Plot top artister"""
@@ -447,6 +448,7 @@ def main():
         formatted_key = key.replace('_', ' ').title()
         print(f"🎵 {formatted_key}: {value:,}" if isinstance(value, (int, float)) else f"🎵 {formatted_key}: {value}")
     
+        
     # Top artister
     print(f"\n🌟 TOP 5 ARTISTER:")
     top_artists = analyzer.get_top_artists(5)
